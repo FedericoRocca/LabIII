@@ -1,0 +1,36 @@
+Laboratorio III
+
+Prof. Angel Simón
+
+Parciales se aprueban con 6
+
+1era parte (Parcial I)
+	Normalización de DDBB
+	Conceptos fundamentales modelo relacional
+	Consultas de Acción
+	Consultas de selección
+
+2nda parte (Parcial II)
+	Vistas
+	Procedimientos almacenados
+	Transacciones - Introducción
+	Triggers
+
+Final Parcial I + Parcial II
+
+Parciales escritos (PAPEL)
+
+Evaluaciones
+
+	Parcial I  - 30/09
+	Parcial II - 11/11
+
+Ver cronogramas en el campus
+2 reuperatorios por parcial
+
+Recuperatorio Parcial I
+	Primera fecha final
+
+Recuperatorio Parcial II
+	Segunda fecha final
+
