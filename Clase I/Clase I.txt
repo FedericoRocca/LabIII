@@ -1,0 +1,130 @@
+Git
+Gestión de repósitorios
+
+SQL Server Express
+Versión 2008 a 2018
+
+Tabla
+	Donde se guarda la información, el molde del registro
+
+Columnas
+	Datos de los registros
+
+Filas
+	Instancias de datos
+
+SQL
+	- Gestor de DDBB (SQL Server)
+	- IDE (SQL Management Studio)
+	- Lenguaje
+
+Tipos de datos SQL
+
+Caracteres
+	char     - (30) (Tamaño fijo)
+	nchar    - (30) 
+	varchar  - (30) (Tamaño variable)
+	nvarchar - (30) 
+
+Enteros
+	bit      - 
+	tinyint  - 
+	smallint - 
+	int      - 
+	bigint   - 
+
+Decimales
+	decimal    - 
+	smallmoney - 
+	money      - 
+	float      - 
+
+Fechas
+	time
+	datetime
+	smalldatetime
+	date
+
+Tipos de DDBB
+
+Relacionales
+	Sql Server
+	MySQL
+	Oracle
+	PostgreSQL
+	MariaDB
+	Access
+
+No-Relacionales (NO-SQL)
+	MongoDB
+	CouchDB
+	Cassandra
+	Firebase
+	Dynamo DB
+
+Esquema de conexión
+	ip:puerto\instancia
+
+Servidor de DDBB
+	DDBB
+		- Usuarios
+		- Permisos
+		- Restricciones
+		- sp (Store Procedures)
+		- Vistas
+		- Triggers
+		- Indices
+	- Tablas
+		- Columnas
+		- Filas
+
+Restricciones
+
+	- Clave Primaria/unica (PK - Primary Key)
+
+		Legajo (PK) | Apellido | Localidad	
+		------------+----------+-----------
+		1000		| Albornoz | 1			    
+		2000		| Lacioppa | 1			   	
+		3000		| Rocca	   | 2				
+		3000		| Lopez	   | 4			--> No lo permite				
+
+	- Clave foránea 
+
+		Legajo (PK) | Apellido | IDLoca (FK)			ID (PK)		|	Nombre
+		------------+----------+---------------         ------------+------------------------
+		1000		| Albornoz | 1			      -->		1		|	General Pacheco
+		2000		| Lacioppa | 1			   	  -->		2		|	Tigre
+		3000		| Rocca	   | 2				  -->		3		|	Talar
+		3000		| Rocca	   | 4				  -->	No lo permite
+
+	- Nulidad
+
+		Legajo		| Genero		| Fec. Graduación
+		------------+---------------+-------------------
+			1000	|		F 		| 1/1/19
+			2000	|		null	| 1/1/19
+			3000	|		M		| null			--> Permite la nulidad
+
+	- Check
+
+		Legajo  | Sueldo
+		--------+--------
+			1	|	15000
+			2	|	45000
+			3	|	-100   --> No lo permite
+
+Normalización
+	Revisar apuntes													
+
+
+
+
+
+
+
+
+
+
+
+
