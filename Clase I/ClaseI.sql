@@ -45,9 +45,10 @@ GO
 -- Creo la tabla actividades por socio
 CREATE TABLE ActividadesPorSocio
 (
-	Legajo INT PRIMARY KEY,
+	Legajo INT,
 	Actividad INT NOT NULL FOREIGN KEY (Actividad) REFERENCES Actividades (ID),
-	Becado BIT NOT NULL
+	Becado BIT NOT NULL,
+	PRIMARY KEY (Legajo, Actividad)
 )
 GO
 
@@ -112,12 +113,12 @@ INSERT INTO Actividades VALUES ('10', 'Doom', '500', 'No', '2')
 GO
 
 -- Insert de datos en la tabla de socios
-INSERT INTO Socios VALUES ('1000', 'Angelelli', 'Javier', '29', '1/1/1990', 'M')
-INSERT INTO Socios VALUES ('2000', 'Baires', 'Belén', '21', '2/2/1998', 'F')
-INSERT INTO Socios VALUES ('3000', 'Corrionero', 'Juan', '15', '3/3/2004', 'M')
-INSERT INTO Socios VALUES ('5000', 'Garcia', 'Oriana', '33', '4/4/1986', 'F')
-INSERT INTO Socios VALUES ('6000', 'Kusters', 'Kevin', '19', '5/5/2000', 'M')
-INSERT INTO Socios VALUES ('7000', 'Lacioppa', 'Ignacio', '19', '6/6/2000', 'M')
-INSERT INTO Socios VALUES ('8000', 'Rocca', 'Federico', '59', '7/7/1960', 'M')
-INSERT INTO Socios VALUES ('9000', 'Albornoz', 'Magalí', '28', '8/8/1990', 'F')
+INSERT INTO Socios VALUES ('1000', 'Angelelli', 'Javier', DATEDIFF(yy, '1/1/1990', CURRENT_TIMESTAMP), '1/1/1990', 'M')
+INSERT INTO Socios VALUES ('2000', 'Baires', 'Belén', DATEDIFF(yy, '2/2/1998', CURRENT_TIMESTAMP), '2/2/1998', 'F')
+INSERT INTO Socios VALUES ('3000', 'Corrionero', 'Juan', DATEDIFF(yy, '3/3/2004', CURRENT_TIMESTAMP), '3/3/2004', 'M')
+INSERT INTO Socios VALUES ('5000', 'Garcia', 'Oriana', DATEDIFF(yy, '4/4/1986', CURRENT_TIMESTAMP), '4/4/1986', 'F')
+INSERT INTO Socios VALUES ('6000', 'Kusters', 'Kevin', DATEDIFF(yy, '5/5/2000', CURRENT_TIMESTAMP), '5/5/2000', 'M')
+INSERT INTO Socios VALUES ('7000', 'Lacioppa', 'Ignacio', DATEDIFF(yy, '6/6/2000', CURRENT_TIMESTAMP), '6/6/2000', 'M')
+INSERT INTO Socios VALUES ('8000', 'Rocca', 'Federico', DATEDIFF(yy, '7/7/1960', CURRENT_TIMESTAMP), '7/7/1960', 'M')
+INSERT INTO Socios VALUES ('9000', 'Albornoz', 'Magalí', DATEDIFF(yy, '8/8/1990', CURRENT_TIMESTAMP), '8/8/1990', 'F')
 GO
