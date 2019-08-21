@@ -9,7 +9,6 @@ CREATE TABLE Socios
 	Legajo INT PRIMARY KEY,
 	Apellido VARCHAR (50) NOT NULL,
 	Nombres VARCHAR (50) NOT NULL,
-	Edad TINYINT NOT NULL CHECK(Edad > 0),
 	FechaNacimiento DATE NOT NULL CHECK (FechaNacimiento < '01/01/2010'),
 	Genero CHAR NULL
 )
