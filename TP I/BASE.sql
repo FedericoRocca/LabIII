@@ -1,0 +1,56 @@
+CREATE DATABASE Club
+GO
+
+USE Club
+GO
+
+CREATE TABLE Socios
+(
+	Legajo INT PRIMARY KEY,
+	Apellido VARCHAR (50) NOT NULL,
+	Nombres VARCHAR (50) NOT NULL,
+	Edad TINYINT NOT NULL CHECK(Edad > 0),
+	FechaNacimiento DATE NOT NULL CHECK (FechaNacimiento < '01/01/2010'),
+	Genero CHAR NULL
+)
+GO
+
+CREATE TABLE Localidades
+(
+	ID INT PRIMARY KEY IDENTITY (1,1),
+	Localidad VARCHAR (50) NOT NULL,
+	Provincia VARCHAR (50) NOT NULL,
+	CodigoPostal INT NOT NULL
+)
+GO
+
+CREATE TABLE Sedes
+(
+	ID INT PRIMARY KEY IDENTITY (1,1),
+	Nombre VARCHAR (50) NOT NULL,
+	Localidad INT NOT NULL FOREIGN KEY (Localidad) REFERENCES Localidades (ID),
+	Direccion VARCHAR (50) NOT NULL,
+	Telefono INT NULL,
+	Mail VARCHAR (50) NULL
+)
+GO
+
+CREATE TABLE Actividades
+(
+	ID INT PRIMARY KEY IDENTITY (1,1),
+	Nombre VARCHAR (50) NOT NULL,
+	Costo MONEY NOT NULL CHECK( Costo > 0 ),
+	ReqAptoMedico BIT NOT NULL,
+	Sede INT NOT NULL FOREIGN KEY (Sede) REFERENCES Sedes (ID),
+)
+GO
+
+CREATE TABLE ActividadesPorSocio
+(
+	ID INT PRIMARY KEY IDENTITY (1,1),
+	Legajo INT NOT NULL FOREIGN KEY (Legajo) REFERENCES Socios (Legajo),
+	Actividad INT NOT NULL FOREIGN KEY (Actividad) REFERENCES Actividades (ID),
+	Becado BIT NOT NULL,
+	UNIQUE (Legajo, Actividad)
+)
+GO
