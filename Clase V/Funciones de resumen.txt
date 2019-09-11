@@ -1,0 +1,48 @@
+Funciones de resumen
+Sirven para resumir datos de una o varias tablas
+
+Contar (count) cantidad de filas si *, o si es nombre de columna, cantidad de ocurrencias donde columna != NULL
+    select count(*) from Socios where Genero = 'F' as 'Cantidad';
+
+    select count(*) from Sedes; -- Cuenta de la tabla Sedes la cantidad de filas
+    select count(Telefonos) from Sedes; -- Cuenta de la tabla Sedes la cantidad de filas donde 'Telefonos' != NULL
+
+Promedio (AVG)
+    select AVG(Importe) as 'Promedio' from Pagos where YEAR(Fecha) = YEAR(GETDATE());
+
+Suma (SUM)
+    select SUM(Importe) from Pagos where Estado in (2, 3);
+
+Máximos (MAX)
+    select MAX(Importe) as 'Mayor' from Pagos;
+    select MAX(Fecha) as 'Mayor' from Pagos;
+
+Mínimos (MIN)
+    select MIN(Importe) as 'Mayor' from Pagos;
+    select MIN(Fecha) as 'Mayor' from Pagos;
+
+Agrupar (group by)
+    select S.Nombre, count(*) from Sedes as S
+    inner join Actividades as A
+    on A.IDSede = S.ID
+    group by S.Nombre
+
+    select S.Apellidos, S.Nombres, SUM(P.Importe) as Total
+    from Socios as S
+    inner join Pagos as P
+    on S.Legajo = P.Legajo
+    group by S.Apellidos, S.Nombres, S.Legajo
+
+    select S.Apellidos, S.Nombres, isnull(SUM(P.Importe), 0) as Total
+    from Socios as S
+    left join Pagos as P
+    on S.Legajo = P.Legajo
+    group by S.Apellidos, S.Nombres, S.Legajo
+    having isnull( SUM(P.Importe), 0 ) = 0
+
+    select distinct S.Legajo, S.Apellidos, S.Nombres
+    from Socios as S
+    left join Pagos as P on S.Legajo = P.Legajo
+    where P.IDPago is NULL
+
+    
