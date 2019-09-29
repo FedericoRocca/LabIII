@@ -1,0 +1,19 @@
+--Inserto los datos
+Insert into Paises values ('Argentina');
+Insert into Paises values ('Estados Unidos');
+Insert into Paises values ('Reino Inido');
+Insert into Paises values ('India');
+Insert into Paises values ('Francia');
+Insert into Paises values ('España');
+GO
+
+Insert into Generos values ('Terror');
+Insert into Generos values ('Comedia');
+Insert into Generos values ('Ciencia Ficción');
+Insert into Generos values ('Drama');
+GO
+
+Insert into Calificaciones values ('APTO PARA TODO PÚBLICO');
+Insert into Calificaciones values ('APTO PARA MAYORES DE 13');
+Insert into Calificaciones values ('APTO PARA MAYORES DE 16');
+GO
